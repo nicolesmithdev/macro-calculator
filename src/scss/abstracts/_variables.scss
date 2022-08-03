@@ -1,0 +1,36 @@
+// COLOR PALETTE
+$black: #000000;
+$white: #ffffff;
+
+// FONTS
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,400&family=Raleway:ital,wght@0,400;0,600&display=swap');
+
+// VARIABLES
+
+$alt-font: Lato, arial, helvetica, sans-serif;
+$default-color: $black;
+$default-font: Raleway, arial, helvetica, sans-serif;
+$default-size: 16px;
+$line-height: 30px;
+$padding: $line-height;
+
+// RESPONSIVE BREAKPOINTS
+
+$breakpoints: (
+    'x-large': (
+        min-width: 1200px,
+    ),
+    'large': (
+        min-width: 992px,
+    ),
+    'medium': (
+        min-width: 768px,
+    ),
+    'small': (
+        min-width: 544px,
+    ),
+    'x-small': (
+        max-width: 544px,
+    ),
+);

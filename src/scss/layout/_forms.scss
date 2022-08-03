@@ -1,0 +1,35 @@
+label {
+    display: block;
+    font-weight: 700;
+}
+input {
+    border: 1px solid $black;
+    color: $default-color;
+    font: #{$default-size}/#{$line-height} $default-font;
+}
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+    @include background-gradient(#f7f6f7, #dfdbdf);
+    border: 1px solid #c7c0c7;
+    @include border-radius(2px);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.075),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: #5e5e5e;
+    cursor: pointer;
+    height: 35px;
+    text-shadow: 0 1px 0 #ffffff;
+}
+input[type='checkbox'],
+input[type='radio'] {
+    height: auto;
+    width: auto;
+}
+input[type='radio'] + label {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    + input[type='radio'] {
+        margin-left: 1rem;
+    }
+}
