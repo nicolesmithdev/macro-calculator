@@ -4,7 +4,7 @@ label {
     margin-bottom: 0.5rem;
 }
 input {
-    border: 2px solid $color-athens-gray;
+    border: 2px solid $color-gray;
     border-radius: 30px;
     color: $default-color;
     font: #{$default-size}/#{$line-height} $default-font;
@@ -47,7 +47,7 @@ input[type='radio'] + label {
     }
 }
 label.radio-item {
-    background-color: $color-athens-gray;
+    background-color: $color-gray;
     cursor: pointer;
     font-weight: 400;
     padding: 1rem;
