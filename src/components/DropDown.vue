@@ -14,7 +14,7 @@
                     'dropdown-options-item',
                     { active: key == option.value },
                 ]"
-                @click="changeSelection"
+                @click="changeSelection(option.value)"
                 v-html="option.label"
             />
         </div>
@@ -45,11 +45,11 @@ export default {
         },
     },
     methods: {
-        changeSelection(event) {
-            console.log('changeSelection', this.item.key, event.target.value);
+        changeSelection(value) {
+            console.log('changeSelection', this.item.key, value);
             this.$store.dispatch('PROP', {
                 prop: this.item.key,
-                value: event.target.value,
+                value,
             });
         },
     },
