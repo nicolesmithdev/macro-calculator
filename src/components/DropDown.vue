@@ -46,11 +46,11 @@ export default {
     },
     methods: {
         changeSelection(value) {
-            console.log('changeSelection', this.item.key, value);
             this.$store.dispatch('PROP', {
                 prop: this.item.key,
                 value,
             });
+            this.toggle = false;
         },
     },
 };
