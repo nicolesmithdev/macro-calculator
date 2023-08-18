@@ -23,6 +23,12 @@ export default {
         };
     },
     computed: {
+        bmr() {
+            return this.$store.getters.PROP('bmr');
+        },
+        activityLevel() {
+            return this.$store.getters.PROP('activityLevel');
+        },
         tdee() {
             return Math.round(Number(this.bmr) * Number(this.activityLevel));
         },
