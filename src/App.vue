@@ -3,7 +3,7 @@
         <h1>Macro Calculator</h1>
         <BMR />
         <TDEE />
-        <h3 v-if="dailyCalories">Daily Calories: {{ this.dailyCalories }}</h3>
+        <YourGoals />
     </div>
 </template>
 
@@ -11,9 +11,10 @@
 import './scss/style.scss';
 import BMR from './components/BMR';
 import TDEE from './components/TDEE';
+import YourGoals from './components/YourGoals';
 
 export default {
-    components: { BMR, TDEE },
+    components: { BMR, TDEE, YourGoals },
     data() {
         return {
             activityLevel: '1.2',
@@ -25,18 +26,6 @@ export default {
     computed: {
         gender() {
             return this.$store.getters.PROP('gender') ? 'female' : 'male';
-        },
-        bmr() {
-            return this.$store.getters.PROP('bmr');
-        },
-        activityLevel() {
-            return this.$store.getters.PROP('activityLevel');
-        },
-        tdee() {
-            return Math.round(Number(this.bmr) * Number(this.activityLevel));
-        },
-        dailyCalories() {
-            return this.tdee - 500;
         },
     },
     watch: {

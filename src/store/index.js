@@ -11,6 +11,7 @@ const store = createStore({
             activityLevel: '1.55',
             bmr: '',
             gender: true,
+            goal: 'maintain',
             searchTerm: '',
             tdee: '',
         };
