@@ -41,6 +41,15 @@ export default {
                 ],
             };
         },
+        activityLevel() {
+            return this.$store.getters.PROP('activityLevel');
+        },
+        bmr() {
+            return this.$store.getters.PROP('bmr');
+        },
+        tdee() {
+            return Math.round(Number(this.bmr) * Number(this.activityLevel));
+        },
     },
 };
 </script>
