@@ -50,9 +50,13 @@
                 />
             </div>
         </div>
-        <h3 v-if="weight">
-            Your Basal Metabolic Rate (BMR) is: {{ this.bmr }}
-        </h3>
+        <h2>
+            Your BMR is: <strong>{{ this.bmr }}</strong>
+        </h2>
+        <p class="desc">
+            Your Basal Metabolic Rate (BMR) is the absolute minimum number of
+            calories your body needs to function at rest.
+        </p>
     </div>
 </template>
 
@@ -76,6 +80,9 @@ export default {
             },
         },
         bmr() {
+            if (!this.age || !this.weight || !this.height) {
+                return '';
+            }
             /**
              * Mifflin St. Jeor formula
              * BMR = (9.99 x weight (kg) + 6.25 x height (cm) – 4.92 x age + gender) kcal/day
