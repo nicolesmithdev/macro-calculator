@@ -10,6 +10,7 @@ const store = createStore({
             activeFilters: [],
             activityLevel: '1.55',
             bmr: '',
+            gender: true,
             searchTerm: '',
             tdee: '',
         };

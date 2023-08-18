@@ -60,7 +60,6 @@
 export default {
     data() {
         return {
-            gender: true,
             age: '32',
             unit: true,
             weight: '148',
@@ -68,6 +67,14 @@ export default {
         };
     },
     computed: {
+        gender: {
+            get() {
+                return this.$store.getters.PROP('gender');
+            },
+            set(value) {
+                this.$store.dispatch('PROP', { prop: 'gender', value });
+            },
+        },
         bmr() {
             /**
              * Mifflin St. Jeor formula

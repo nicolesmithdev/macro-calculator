@@ -22,7 +22,13 @@ export default {
             activityLevel: '1.2',
         };
     },
+    beforeMount() {
+        document.body.classList.add(this.gender);
+    },
     computed: {
+        gender() {
+            return this.$store.getters.PROP('gender') ? 'female' : 'male';
+        },
         bmr() {
             return this.$store.getters.PROP('bmr');
         },
@@ -34,6 +40,12 @@ export default {
         },
         dailyCalories() {
             return this.tdee - 500;
+        },
+    },
+    watch: {
+        gender(newValue, oldValue) {
+            document.body.classList.remove(oldValue);
+            document.body.classList.add(newValue);
         },
     },
 };

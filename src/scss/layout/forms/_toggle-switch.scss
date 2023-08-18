@@ -17,7 +17,7 @@
             width: 100%;
             // false
             &:before {
-                background-color: $color-picton-blue;
+                background-color: var(--accent-color);
                 border-radius: 30px;
                 color: $color-white;
                 content: attr(data-label);
@@ -35,7 +35,7 @@
             // true
             &:checked ~ .slider[data-label] {
                 &:before {
-                    background-color: $color-pink;
+                    background-color: var(--accent-color);
                     left: calc(100% - 6px);
                     transform: translateX(-100%);
                 }
