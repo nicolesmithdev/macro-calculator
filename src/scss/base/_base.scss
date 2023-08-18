@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    background-color: $color-catskill-white;
+    padding: $padding 0;
+}

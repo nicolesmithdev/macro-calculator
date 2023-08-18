@@ -1,5 +1,16 @@
 body {
-    background: $white;
+    background: $color-white;
     color: $default-color;
     font: #{$default-size}/#{$line-height} $default-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    line-height: $line-height;
+    margin: 0 0 $padding;
 }

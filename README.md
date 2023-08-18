@@ -1,4 +1,4 @@
-# Vue Boilerplate
+# Macro Calculator
 
 ## How to Use
 

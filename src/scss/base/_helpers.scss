@@ -1,5 +1,11 @@
 .container {
     margin: 0 auto;
-    max-width: 768px;
+    max-width: 360px;
     width: 100%;
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
 }

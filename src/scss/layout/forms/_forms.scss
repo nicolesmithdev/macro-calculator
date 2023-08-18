@@ -1,11 +1,15 @@
 label {
     display: block;
     font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 input {
-    border: 1px solid $black;
+    border: 2px solid $color-athens-gray;
+    border-radius: 30px;
     color: $default-color;
     font: #{$default-size}/#{$line-height} $default-font;
+    padding: 0.25rem 1rem;
+    width: 100%;
 }
 input[type='button'],
 input[type='reset'],
@@ -29,7 +33,29 @@ input[type='radio'] + label {
     cursor: pointer;
     display: inline-block;
     font-weight: 400;
+    margin-left: 1rem;
     + input[type='radio'] {
         margin-left: 1rem;
     }
 }
+.radio-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    &.d-block {
+        display: block;
+    }
+}
+label.radio-item {
+    background-color: $color-athens-gray;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    &.active,
+    &:active {
+        background-color: $color-mantis;
+        color: $color-white;
+    }
+}
+
+@import 'toggle-switch';

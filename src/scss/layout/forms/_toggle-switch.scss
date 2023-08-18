@@ -1,0 +1,45 @@
+.toggle-switch {
+    position: relative;
+    height: 42px;
+    width: 172px;
+    label {
+        background-color: $color-athens-gray;
+        border-radius: 50px;
+        cursor: pointer;
+        height: 42px;
+        position: absolute;
+        width: 100%;
+        .slider[data-label] {
+            border-radius: 30px;
+            height: 100%;
+            position: absolute;
+            transition: 0.3s;
+            width: 100%;
+            // false
+            &:before {
+                background-color: $color-picton-blue;
+                border-radius: 30px;
+                color: $color-white;
+                content: attr(data-label);
+                height: 30px;
+                left: 6px;
+                padding: 0 0.5rem;
+                position: absolute;
+                top: 6px;
+                transition: 0.3s;
+            }
+        }
+        input {
+            display: none;
+            position: absolute;
+            // true
+            &:checked ~ .slider[data-label] {
+                &:before {
+                    background-color: $color-carissma;
+                    left: calc(100% - 6px);
+                    transform: translateX(-100%);
+                }
+            }
+        }
+    }
+}

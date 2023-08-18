@@ -1,6 +1,12 @@
 // COLOR PALETTE
-$black: #000000;
-$white: #ffffff;
+
+$color-athens-gray: #e6e9ed;
+$color-black: #000000;
+$color-carissma: #ec87c0;
+$color-catskill-white: #f5f7fa;
+$color-mantis: #8cc152;
+$color-picton-blue: #4fc1e9;
+$color-white: #ffffff;
 
 // FONTS
 
@@ -9,7 +15,7 @@ $white: #ffffff;
 // VARIABLES
 
 $alt-font: Lato, arial, helvetica, sans-serif;
-$default-color: $black;
+$default-color: $color-black;
 $default-font: Raleway, arial, helvetica, sans-serif;
 $default-size: 16px;
 $line-height: 30px;
