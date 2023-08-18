@@ -8,7 +8,7 @@ const store = createStore({
     state() {
         return {
             activeFilters: [],
-            activityLevel: '1.2',
+            activityLevel: '1.55',
             bmr: '',
             searchTerm: '',
             tdee: '',
