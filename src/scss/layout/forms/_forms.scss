@@ -1,4 +1,5 @@
 label {
+    cursor: pointer;
     display: block;
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -38,25 +39,6 @@ input[type='radio'] + label {
         margin-left: 1rem;
     }
 }
-.radio-group {
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-    &.d-block {
-        display: block;
-    }
-}
-label.radio-item {
-    background-color: $color-gray;
-    cursor: pointer;
-    font-weight: 400;
-    padding: 1rem;
-    width: 100%;
-    &.active,
-    &:active {
-        background-color: $color-mantis;
-        color: $color-white;
-    }
-}
 
 @import 'toggle-switch';
+@import 'dropdown';

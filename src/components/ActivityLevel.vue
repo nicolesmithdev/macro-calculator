@@ -1,27 +1,21 @@
 <template>
-    <div>
+    <div class="activity-level">
         <label>Activity level</label>
         <button
+            :class="['select', { active: showOptions }]"
             v-html="selectedActivityLevel"
             @click="showOptions = !showOptions"
         />
-        <div v-if="showOptions">
-            <div class="radio-group d-block">
-                <label
-                    v-for="(option, i) in options"
-                    :key="i"
-                    :for="option.value"
-                    :class="radioClasses('activityLevel', option.vaue)"
-                >
-                    <input
-                        type="radio"
-                        v-model="activityLevel"
-                        :id="option.value"
-                        :value="option.value"
-                    />
-                    <span v-html="option.label" />
-                </label>
-            </div>
+        <div v-if="showOptions" class="select-dropdown">
+            <label v-for="(option, i) in options" :key="i" :for="option.value">
+                <input
+                    type="radio"
+                    v-model="activityLevel"
+                    :id="option.value"
+                    :value="option.value"
+                />
+                <span v-html="option.label" />
+            </label>
         </div>
     </div>
 </template>
@@ -70,15 +64,6 @@ export default {
             return this.options.filter(
                 (option) => option.value == this.activityLevel
             )[0].label;
-        },
-    },
-    methods: {
-        radioClasses(prop, value) {
-            let classes = ['radio-item'];
-            if (this[prop] == value) {
-                classes.push('active');
-            }
-            return classes;
         },
     },
 };

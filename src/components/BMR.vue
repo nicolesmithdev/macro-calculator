@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bmr">
         <div class="row">
             <div>
                 <label>I am a...</label>
