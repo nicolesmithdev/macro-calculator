@@ -8,8 +8,10 @@ const store = createStore({
     state() {
         return {
             activeFilters: [],
+            activityLevel: '1.2',
             bmr: '',
             searchTerm: '',
+            tdee: '',
         };
     },
     mutations,

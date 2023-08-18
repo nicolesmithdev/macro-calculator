@@ -49,6 +49,7 @@ input[type='radio'] + label {
 label.radio-item {
     background-color: $color-athens-gray;
     cursor: pointer;
+    font-weight: 400;
     padding: 1rem;
     width: 100%;
     &.active,
