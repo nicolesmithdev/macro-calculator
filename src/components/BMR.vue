@@ -83,7 +83,7 @@ export default {
              */
             let wgt = this.weight;
             let hgt = this.height;
-            if (this.unit === 'imperial') {
+            if (this.unit === true) {
                 wgt = this.weight / 2.2046;
                 hgt = this.height * 2.54;
             }
