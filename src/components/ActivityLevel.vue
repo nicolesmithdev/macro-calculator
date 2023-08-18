@@ -1,27 +1,38 @@
 <template>
     <div>
         <label>Activity level</label>
-        <div class="radio-group d-block">
-            <label
-                v-for="(option, i) in options"
-                :key="i"
-                :for="option.value"
-                :class="radioClasses('activityLevel', option.vaue)"
-            >
-                <input
-                    type="radio"
-                    v-model="activityLevel"
-                    :id="option.value"
-                    :value="option.value"
-                />
-                <span v-html="option.label" />
-            </label>
+        <button
+            v-html="selectedActivityLevel"
+            @click="showOptions = !showOptions"
+        />
+        <div v-if="showOptions">
+            <div class="radio-group d-block">
+                <label
+                    v-for="(option, i) in options"
+                    :key="i"
+                    :for="option.value"
+                    :class="radioClasses('activityLevel', option.vaue)"
+                >
+                    <input
+                        type="radio"
+                        v-model="activityLevel"
+                        :id="option.value"
+                        :value="option.value"
+                    />
+                    <span v-html="option.label" />
+                </label>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            showOptions: false,
+        };
+    },
     computed: {
         activityLevel: {
             get() {
@@ -54,6 +65,11 @@ export default {
                     value: '1.9',
                 },
             ];
+        },
+        selectedActivityLevel() {
+            return this.options.filter(
+                (option) => option.value == this.activityLevel
+            )[0].label;
         },
     },
     methods: {
