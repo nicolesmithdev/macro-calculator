@@ -1,37 +1,39 @@
-button.select {
-    background-color: $color-white;
-    border: 2px solid $color-gray;
-    border-radius: 30px;
-    color: var(--accent-color);
-    cursor: pointer;
-    font: #{$default-size}/#{$line-height} $default-font;
-    padding: 0.5rem 1rem;
-    position: relative;
-    width: 100%;
-    &:after {
-        content: '>';
-        display: inline-block;
-        margin-left: 1rem;
-        transform: rotate(90deg);
+.dropdown {
+    button {
+        background-color: $color-white;
+        border: 2px solid $color-gray;
+        border-radius: 30px;
+        color: var(--accent-color);
+        cursor: pointer;
+        font: #{$default-size}/#{$line-height} $default-font;
+        padding: 0.5rem 1rem;
+        position: relative;
+        width: 100%;
+        &:after {
+            content: '>';
+            display: inline-block;
+            margin-left: 1rem;
+            transform: rotate(90deg);
+        }
+        &.active,
+        &:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: $color-white;
+        }
     }
-    &.active,
-    &:hover {
-        background-color: var(--accent-color);
-        border-color: var(--accent-color);
-        color: $color-white;
-    }
-}
 
-.select-dropdown {
-    background-color: $color-white;
-    border: 2px solid var(--accent-color);
-    border-radius: 15px;
-    margin: 1rem auto 0;
-    padding: 1rem;
-    label {
-        font-weight: 400;
-        &:last-child {
-            margin-bottom: 0;
+    &-options {
+        background-color: $color-white;
+        border: 2px solid var(--accent-color);
+        border-radius: 15px;
+        margin: 1rem auto 0;
+        padding: 1rem;
+        label {
+            font-weight: 400;
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 }
