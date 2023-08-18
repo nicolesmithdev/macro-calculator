@@ -35,7 +35,7 @@
             // true
             &:checked ~ .slider[data-label] {
                 &:before {
-                    background-color: $color-carissma;
+                    background-color: $color-pink;
                     left: calc(100% - 6px);
                     transform: translateX(-100%);
                 }
