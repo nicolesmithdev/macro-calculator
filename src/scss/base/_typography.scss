@@ -13,12 +13,5 @@ h6 {
     font-weight: normal;
     line-height: $line-height;
     margin: 0;
-    &:not(:last-child) {
-        margin-bottom: $padding;
-    }
-}
-
-h1 {
-    margin-bottom: 0 !important;
     text-align: center;
 }

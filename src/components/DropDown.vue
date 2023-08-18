@@ -7,19 +7,16 @@
             @click="toggle = !toggle"
         />
         <div v-if="toggle" class="dropdown-options">
-            <label
+            <div
                 v-for="(option, i) in item.options"
                 :key="i"
-                :for="option.value"
-            >
-                <input
-                    type="radio"
-                    v-model="activityLevel"
-                    :id="option.value"
-                    :value="option.value"
-                />
-                <span v-html="option.label" />
-            </label>
+                :class="[
+                    'dropdown-options-item',
+                    { active: key == option.value },
+                ]"
+                @click="changeSelection"
+                v-html="option.label"
+            />
         </div>
     </div>
 </template>
@@ -38,18 +35,22 @@ export default {
         };
     },
     computed: {
-        key: {
-            get() {
-                return this.$store.getters.PROP(this.item.key);
-            },
-            set(value) {
-                this.$store.dispatch('PROP', { prop: this.item.key, value });
-            },
+        key() {
+            return this.$store.getters.PROP(this.item.key);
         },
         selectedOption() {
             return this.item.options.filter(
                 (option) => option.value == this.key
             )[0].label;
+        },
+    },
+    methods: {
+        changeSelection(event) {
+            console.log('changeSelection', this.item.key, event.target.value);
+            this.$store.dispatch('PROP', {
+                prop: this.item.key,
+                value: event.target.value,
+            });
         },
     },
 };
