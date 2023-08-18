@@ -90,9 +90,11 @@ export default {
             // (10 x weight in kg) + (6.25 x height in cm)
             let formula = Math.round(9.99 * wgt + 6.25 * hgt - 4.92 * this.age);
             if (this.gender) {
-                formula = formula + 5;
-            } else {
+                // if female, subtract 161
                 formula = formula - 161;
+            } else {
+                // if male, add 5
+                formula = formula + 5;
             }
             this.$store.dispatch('PROP', { prop: 'bmr', value: formula });
             return formula;
