@@ -69,16 +69,21 @@ export default {
     components: { ActivityLevel },
     data() {
         return {
-            gender: false,
-            unit: false,
-            weight: '',
-            height: '',
-            age: '',
+            gender: true,
+            unit: true,
+            weight: '148',
+            height: '65',
+            age: '30',
             activityLevel: '1.2',
         };
     },
     computed: {
         bmr() {
+            /**
+             * Mifflin St. Jeor formula
+             * BMR = (9.99 x weight (kg) + 6.25 x height (cm) – 4.92 x age + gender) kcal/day
+             * gender is +5 for males, -161 for females
+             */
             let weight = this.weight;
             let height = this.height;
             if (this.unit === 'imperial') {
@@ -87,7 +92,7 @@ export default {
             }
             // (10 x weight in kg) + (6.25 x height in cm)
             let formula = Math.round(
-                10 * weight + 6.25 * height - 5 * this.age
+                9.99 * weight + 6.25 * height - 4.92 * this.age
             );
             if (this.gender === 'male') {
                 return formula + 5;
