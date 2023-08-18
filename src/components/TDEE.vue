@@ -1,5 +1,10 @@
 <template>
-    <DropDown :item="item" />
+    <div class="tdee">
+        <DropDown :item="item" />
+        <h3 v-if="tdee">
+            Your Total Daily Energy Expenditure (TDEE) is {{ this.tdee }}
+        </h3>
+    </div>
 </template>
 
 <script>

@@ -2,10 +2,7 @@
     <div class="container">
         <h1>Macro Calculator</h1>
         <BMR />
-        <ActivityLevel />
-        <h3 v-if="tdee">
-            Your Total Daily Energy Expenditure (TDEE) is {{ this.tdee }}
-        </h3>
+        <TDEE />
         <h3 v-if="dailyCalories">Daily Calories: {{ this.dailyCalories }}</h3>
     </div>
 </template>
@@ -13,10 +10,10 @@
 <script>
 import './scss/style.scss';
 import BMR from './components/BMR';
-import ActivityLevel from './components/ActivityLevel';
+import TDEE from './components/TDEE';
 
 export default {
-    components: { BMR, ActivityLevel },
+    components: { BMR, TDEE },
     data() {
         return {
             activityLevel: '1.2',
