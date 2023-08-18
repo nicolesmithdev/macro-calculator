@@ -1,9 +1,22 @@
 <template>
     <div class="tdee">
         <DropDown :item="item" />
-        <h3 v-if="tdee">
-            Your Total Daily Energy Expenditure (TDEE) is {{ this.tdee }}
-        </h3>
+        <h2>
+            Your TDEE is: <strong>{{ this.tdee }}</strong>
+        </h2>
+        <div class="desc">
+            <p>
+                Your Total Daily Energy Expenditure (TDEE) is the number of
+                calories it takes yo support your BMR plus physical activity.
+            </p>
+            <p>
+                If you want to <strong>lose weight</strong>, you must consume
+                less than your TDEE. If you want to
+                <strong>maintain</strong> your current weight, your TDEE would
+                be your daily calories. If you want to
+                <strong>gain muscle</strong>, you must eat in a calorie surplus.
+            </p>
+        </div>
     </div>
 </template>
 
@@ -48,8 +61,17 @@ export default {
             return this.$store.getters.PROP('bmr');
         },
         tdee() {
+            if (!this.bmr && !this.activityLevel) {
+                return '';
+            }
             return Math.round(Number(this.bmr) * Number(this.activityLevel));
         },
     },
 };
 </script>
+
+<style lang="scss" scoped>
+h2 {
+    margin-top: 1rem;
+}
+</style>
