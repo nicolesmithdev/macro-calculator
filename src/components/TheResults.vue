@@ -24,8 +24,18 @@ export default {
         tdee() {
             return Math.round(Number(this.bmr) * Number(this.activityLevel));
         },
+        goal() {
+            return this.$store.getters.PROP('goal');
+        },
         dailyCalories() {
-            return this.tdee - 500;
+            switch (this.goal) {
+                case 'lose':
+                    return this.tdee - 500;
+                case 'gain':
+                    return this.tdee + 500;
+                default:
+                    return this.tdee;
+            }
         },
         weight() {
             return this.$store.getters.PROP('weight');
