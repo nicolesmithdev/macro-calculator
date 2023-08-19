@@ -1,5 +1,5 @@
 <template>
-    <div class="stepper-step">
+    <div :class="['stepper-step', { active }]">
         <div class="stepper-step-tab">
             <div class="stepper-step-tab-dot">{{ index + 1 }}</div>
             {{ step.label }}

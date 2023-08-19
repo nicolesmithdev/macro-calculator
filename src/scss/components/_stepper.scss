@@ -12,10 +12,10 @@
             font-weight: 700;
             padding: 0.5rem 1rem;
             &-dot {
-                background-color: var(--accent-color);
+                background-color: $color-gray;
                 align-items: center;
                 border-radius: 50%;
-                color: $color-white;
+                color: darken($color-gray, 15%);
                 contain: layout;
                 display: flex;
                 flex-wrap: wrap;
@@ -53,6 +53,12 @@
         &:first-child .stepper-step-tab-dot:before,
         &:last-child .stepper-step-tab-dot:after {
             display: none;
+        }
+        &.active {
+            .stepper-step-tab-dot {
+                background-color: var(--accent-color);
+                color: $color-white;
+            }
         }
     }
 }
