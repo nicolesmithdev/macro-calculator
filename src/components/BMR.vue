@@ -66,7 +66,6 @@ export default {
         return {
             age: '32',
             unit: true,
-            weight: '148',
             height: '65',
         };
     },
@@ -77,6 +76,14 @@ export default {
             },
             set(value) {
                 this.$store.dispatch('PROP', { prop: 'gender', value });
+            },
+        },
+        weight: {
+            get() {
+                return this.$store.getters.PROP('weight');
+            },
+            set(value) {
+                this.$store.dispatch('PROP', { prop: 'weight', value });
             },
         },
         bmr() {

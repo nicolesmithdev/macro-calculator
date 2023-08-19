@@ -14,6 +14,7 @@ const store = createStore({
             goal: 'maintain',
             searchTerm: '',
             tdee: '',
+            weight: '148',
         };
     },
     mutations,
