@@ -8,13 +8,15 @@ const store = createStore({
     state() {
         return {
             activeFilters: [],
-            activityLevel: '1.55',
+            activityLevel: '',
+            age: '',
             bmr: '',
             gender: true,
-            goal: 'lose',
+            goal: '',
+            height: '',
             searchTerm: '',
             tdee: '',
-            weight: '148',
+            weight: '',
         };
     },
     mutations,

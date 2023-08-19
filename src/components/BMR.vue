@@ -60,9 +60,7 @@
 export default {
     data() {
         return {
-            age: '32',
             unit: true,
-            height: '65',
         };
     },
     computed: {
@@ -74,12 +72,28 @@ export default {
                 this.$store.dispatch('PROP', { prop: 'gender', value });
             },
         },
+        age: {
+            get() {
+                return this.$store.getters.PROP('age');
+            },
+            set(value) {
+                this.$store.dispatch('PROP', { prop: 'age', value });
+            },
+        },
         weight: {
             get() {
                 return this.$store.getters.PROP('weight');
             },
             set(value) {
                 this.$store.dispatch('PROP', { prop: 'weight', value });
+            },
+        },
+        height: {
+            get() {
+                return this.$store.getters.PROP('height');
+            },
+            set(value) {
+                this.$store.dispatch('PROP', { prop: 'height', value });
             },
         },
         bmr() {

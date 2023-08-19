@@ -1,18 +1,27 @@
 <template>
-    <div v-if="dailyCalories" class="results">
-        <p>
+    <div class="results">
+        <p v-if="dailyCalories">
             <strong>Daily Calores:</strong> {{ this.dailyCalories }} <br />
             <strong>Protein:</strong> {{ `${protein}g` }} <br />
             <strong>Carbs:</strong>
             {{ `${carbs}g` }}<br />
             <strong>Fats:</strong> {{ `${fats}g` }}
         </p>
+        <div v-else>
+            <p>Required fields missing</p>
+            <ul>
+                <li v-for="(error, i) in errors" :key="i">{{ error }}</li>
+            </ul>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
     computed: {
+        age() {
+            return this.$store.getters.PROP('age');
+        },
         bmr() {
             return this.$store.getters.PROP('bmr');
         },
@@ -48,6 +57,16 @@ export default {
             let protein = this.protein * 4;
             let carbs = this.carbs * 4;
             return Math.round((this.dailyCalories - protein - carbs) * 0.111);
+        },
+        errors() {
+            let errors = [];
+            let keys = ['age', 'weight', 'height', 'activityLevel', 'goal'];
+            keys.forEach((key) => {
+                if (!this[key]) {
+                    errors.push(key);
+                }
+            });
+            return errors;
         },
     },
 };
