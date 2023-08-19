@@ -32,11 +32,11 @@ export default {
                     component: BMR,
                 },
                 {
-                    label: 'TDEE',
+                    label: 'Activity Level',
                     component: TDEE,
                 },
                 {
-                    label: "What's your goal?",
+                    label: "What's Your Goal?",
                     component: YourGoals,
                 },
                 {

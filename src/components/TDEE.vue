@@ -1,6 +1,14 @@
 <template>
     <div class="tdee">
-        <DropDown :item="item" />
+        <ul class="options-list">
+            <li
+                v-for="(option, i) in options"
+                :key="i"
+                :class="{ active: option.value === activityLevel }"
+                v-html="option.label"
+                @click="updateOption(option.value)"
+            />
+        </ul>
         <h2>
             Your TDEE is: <strong>{{ this.tdee }}</strong>
         </h2>
@@ -21,39 +29,34 @@
 </template>
 
 <script>
-import DropDown from './DropDown.vue';
-
 export default {
-    components: { DropDown },
+    data() {
+        return {
+            options: [
+                {
+                    label: '<strong>Sedentary</strong> desk job, little to no exercise',
+                    value: '1.2',
+                },
+                {
+                    label: '<strong>Light</strong> some exercise 1-3x week',
+                    value: '1.375',
+                },
+                {
+                    label: '<strong>Moderate</strong> exercise 3-5x week',
+                    value: '1.55',
+                },
+                {
+                    label: '<strong>Active</strong> vigorous exercising 5-6x week',
+                    value: '1.725',
+                },
+                {
+                    label: '<strong>Athlete</strong> vigorous exercise 6-7x week',
+                    value: '1.9',
+                },
+            ],
+        };
+    },
     computed: {
-        item() {
-            return {
-                key: 'activityLevel',
-                label: 'Activity level',
-                options: [
-                    {
-                        label: '<strong>Sedentary</strong> desk job, little to no exercise',
-                        value: '1.2',
-                    },
-                    {
-                        label: '<strong>Light</strong> some exercise 1-3x week',
-                        value: '1.375',
-                    },
-                    {
-                        label: '<strong>Moderate</strong> exercise 3-5x week',
-                        value: '1.55',
-                    },
-                    {
-                        label: '<strong>Active</strong> vigorous exercising 5-6x week',
-                        value: '1.725',
-                    },
-                    {
-                        label: '<strong>Athlete</strong> vigorous exercise 6-7x week',
-                        value: '1.9',
-                    },
-                ],
-            };
-        },
         activityLevel() {
             return this.$store.getters.PROP('activityLevel');
         },
@@ -67,11 +70,10 @@ export default {
             return Math.round(Number(this.bmr) * Number(this.activityLevel));
         },
     },
+    methods: {
+        updateOption(value) {
+            this.$store.dispatch('PROP', { prop: 'activityLevel', value });
+        },
+    },
 };
 </script>
-
-<style lang="scss" scoped>
-h2 {
-    margin-top: 1rem;
-}
-</style>
