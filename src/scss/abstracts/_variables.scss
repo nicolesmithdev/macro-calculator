@@ -11,10 +11,12 @@ $color-blue: #4fc1e9;
 
 :root {
     --accent-color: #{$color-pink};
+    --focus-color: hsla(326, 43%, 69%, 40%);
 }
 
 :root .male {
     --accent-color: #{$color-blue};
+    --focus-color: hsla(196, 66%, 72%, 40%);
 }
 
 /**
