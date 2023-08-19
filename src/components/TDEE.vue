@@ -15,7 +15,7 @@
         <div class="desc">
             <p>
                 Your Total Daily Energy Expenditure (TDEE) is the number of
-                calories it takes yo support your BMR plus physical activity.
+                calories it takes to support your BMR plus physical activity.
             </p>
             <p>
                 If you want to <strong>lose weight</strong>, you must consume
