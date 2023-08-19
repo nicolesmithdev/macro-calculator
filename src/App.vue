@@ -4,6 +4,7 @@
         <BMR />
         <TDEE />
         <YourGoals />
+        <TheResults />
     </div>
 </template>
 
@@ -12,9 +13,10 @@ import './scss/style.scss';
 import BMR from './components/BMR';
 import TDEE from './components/TDEE';
 import YourGoals from './components/YourGoals';
+import TheResults from './components/TheResults';
 
 export default {
-    components: { BMR, TDEE, YourGoals },
+    components: { BMR, TDEE, YourGoals, TheResults },
     data() {
         return {
             activityLevel: '1.2',
