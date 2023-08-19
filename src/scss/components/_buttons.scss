@@ -1,0 +1,20 @@
+.btn,
+a.btn,
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 30px;
+    color: $color-white;
+    cursor: pointer;
+    font-size: inherit;
+    padding: 1rem 2rem;
+    &:focus {
+        box-shadow: 0 0 0 3px var(--focus-color);
+    }
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
