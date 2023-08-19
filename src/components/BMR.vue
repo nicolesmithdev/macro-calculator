@@ -14,7 +14,7 @@
         </div>
         <div class="form-control">
             <label for="age">Age</label>
-            <input v-model="age" type="text" id="age" />
+            <input v-model="age" type="number" pattern="\d*" id="age" />
         </div>
         <div class="form-control">
             <label>Units</label>
@@ -32,7 +32,8 @@
             <label>Weight</label>
             <input
                 v-model="weight"
-                type="text"
+                type="number"
+                pattern="\d*"
                 id="weight"
                 :placeholder="unit ? 'lbs' : 'kg'"
             />
@@ -41,7 +42,8 @@
             <label for="height">Height</label>
             <input
                 v-model="height"
-                type="text"
+                type="number"
+                pattern="\d*"
                 id="height"
                 :placeholder="unit ? 'in' : 'cm'"
             />
