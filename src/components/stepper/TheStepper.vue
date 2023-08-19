@@ -10,12 +10,6 @@
         >
             <component :is="step.component" />
         </Step>
-        <!-- <div class="stepper-step">
-            <div class="stepper-step-tab">Tab</div>
-            <div class="stepper-step-content">
-                <DropDown :item="goal" />
-            </div>
-        </div> -->
     </div>
 </template>
 
@@ -23,11 +17,11 @@
 import Step from './SingleStep';
 import BMR from '../BMR';
 import TDEE from '../TDEE';
-import DropDown from '../DropDown';
+import YourGoals from '../YourGoals';
 import TheResults from '../TheResults';
 
 export default {
-    components: { Step, BMR, TDEE, DropDown, TheResults },
+    components: { Step, BMR, TDEE, YourGoals, TheResults },
     props: ['modelValue'],
     data() {
         return {
@@ -42,8 +36,8 @@ export default {
                     component: TDEE,
                 },
                 {
-                    label: 'Goals',
-                    component: BMR,
+                    label: "What's your goal?",
+                    component: YourGoals,
                 },
                 {
                     label: 'Results',
@@ -51,28 +45,6 @@ export default {
                 },
             ],
         };
-    },
-    computed: {
-        goal() {
-            return {
-                key: 'goal',
-                label: "What's your goal?",
-                options: [
-                    {
-                        label: 'Lose',
-                        value: 'lose',
-                    },
-                    {
-                        label: 'Maintain',
-                        value: 'maintain',
-                    },
-                    {
-                        label: 'Gain',
-                        value: 'gain',
-                    },
-                ],
-            };
-        },
     },
 };
 </script>
