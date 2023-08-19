@@ -112,9 +112,3 @@ export default {
     },
 };
 </script>
-
-<style lang="scss" scoped>
-.row {
-    margin-bottom: 2rem;
-}
-</style>
