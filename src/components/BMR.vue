@@ -1,54 +1,50 @@
 <template>
     <div class="bmr">
-        <div class="row">
-            <div>
-                <label>I am a...</label>
-                <div class="toggle-switch">
-                    <label>
-                        <input v-model="gender" type="checkbox" />
-                        <span
-                            class="slider"
-                            :data-label="!gender ? 'male' : 'female'"
-                        ></span>
-                    </label>
-                </div>
-            </div>
-            <div>
-                <label for="age">Age</label>
-                <input v-model="age" type="text" id="age" />
+        <div class="form-control">
+            <label>I am a...</label>
+            <div class="toggle-switch">
+                <label>
+                    <input v-model="gender" type="checkbox" />
+                    <span
+                        class="slider"
+                        :data-label="!gender ? 'male' : 'female'"
+                    ></span>
+                </label>
             </div>
         </div>
-        <div class="row">
-            <div>
-                <label>Units</label>
-                <div class="toggle-switch">
-                    <label>
-                        <input v-model="unit" type="checkbox" />
-                        <span
-                            class="slider"
-                            :data-label="!unit ? 'metric' : 'imperial'"
-                        ></span>
-                    </label>
-                </div>
+        <div class="form-control">
+            <label for="age">Age</label>
+            <input v-model="age" type="text" id="age" />
+        </div>
+        <div class="form-control">
+            <label>Units</label>
+            <div class="toggle-switch">
+                <label>
+                    <input v-model="unit" type="checkbox" />
+                    <span
+                        class="slider"
+                        :data-label="!unit ? 'metric' : 'imperial'"
+                    ></span>
+                </label>
             </div>
-            <div>
-                <label>Weight</label>
-                <input
-                    v-model="weight"
-                    type="text"
-                    id="weight"
-                    :placeholder="unit ? 'lbs' : 'kg'"
-                />
-            </div>
-            <div>
-                <label for="height">Height</label>
-                <input
-                    v-model="height"
-                    type="text"
-                    id="height"
-                    :placeholder="unit ? 'in' : 'cm'"
-                />
-            </div>
+        </div>
+        <div class="form-control">
+            <label>Weight</label>
+            <input
+                v-model="weight"
+                type="text"
+                id="weight"
+                :placeholder="unit ? 'lbs' : 'kg'"
+            />
+        </div>
+        <div class="form-control">
+            <label for="height">Height</label>
+            <input
+                v-model="height"
+                type="text"
+                id="height"
+                :placeholder="unit ? 'in' : 'cm'"
+            />
         </div>
         <h2>
             Your BMR is: <strong>{{ this.bmr }}</strong>

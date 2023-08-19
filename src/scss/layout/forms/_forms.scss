@@ -11,8 +11,7 @@ label {
     cursor: pointer;
     display: block;
     font-weight: 700;
-    margin-bottom: 0.5rem;
-    text-align: center;
+    margin-bottom: 0.25rem;
 }
 input {
     border: 2px solid $color-gray;
@@ -47,6 +46,12 @@ input[type='radio'] + label {
     margin-left: 1rem;
     + input[type='radio'] {
         margin-left: 1rem;
+    }
+}
+
+.form-control {
+    &:not(:last-child) {
+        margin-bottom: $gutter;
     }
 }
 

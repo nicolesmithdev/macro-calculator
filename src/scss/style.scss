@@ -1,8 +1,18 @@
 // Configuration & helpers
-@import 'abstracts/variables', 'abstracts/mixins';
+@import
+    'abstracts/variables',
+    'abstracts/mixins';
 
 // Base
-@import 'base/base', 'base/helpers', 'base/typography';
+@import
+    'base/base',
+    'base/helpers',
+    'base/typography';
+
+// Components
+@import
+    'components/stepper';
 
 // Layout
-@import 'layout/forms/forms';
+@import
+    'layout/forms/forms';

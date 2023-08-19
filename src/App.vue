@@ -1,25 +1,19 @@
 <template>
     <div class="container">
         <h1>Macro Calculator</h1>
-        <BMR />
-        <TDEE />
-        <DropDown :item="goal" />
-        <TheResults />
+        <Stepper v-model="step" />
     </div>
 </template>
 
 <script>
 import './scss/style.scss';
-import BMR from './components/BMR';
-import TDEE from './components/TDEE';
-import DropDown from './components/DropDown';
-import TheResults from './components/TheResults';
+import Stepper from './components/stepper/TheStepper';
 
 export default {
-    components: { BMR, TDEE, DropDown, TheResults },
+    components: { Stepper },
     data() {
         return {
-            activityLevel: '1.2',
+            step: 0,
         };
     },
     beforeMount() {
@@ -28,26 +22,6 @@ export default {
     computed: {
         gender() {
             return this.$store.getters.PROP('gender') ? 'female' : 'male';
-        },
-        goal() {
-            return {
-                key: 'goal',
-                label: "What's your goal?",
-                options: [
-                    {
-                        label: 'Lose',
-                        value: 'lose',
-                    },
-                    {
-                        label: 'Maintain',
-                        value: 'maintain',
-                    },
-                    {
-                        label: 'Gain',
-                        value: 'gain',
-                    },
-                ],
-            };
         },
     },
     watch: {

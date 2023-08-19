@@ -1,9 +1,7 @@
 <template>
     <div v-if="dailyCalories" class="results">
-        <h2>
-            Your Daily Calories are: <strong>{{ this.dailyCalories }}</strong>
-        </h2>
-        <p class="text-center">
+        <p>
+            <strong>Daily Calores:</strong> {{ this.dailyCalories }} <br />
             <strong>Protein:</strong> {{ `${protein}g` }} <br />
             <strong>Carbs:</strong>
             {{ `${carbs}g` }}<br />

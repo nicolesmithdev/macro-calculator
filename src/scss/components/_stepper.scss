@@ -1,0 +1,58 @@
+.stepper {
+    background-color: $color-white;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px #0003, 0 2px 2px #00000024, 0 3px 1px -2px #0000001f;
+    padding: 0.5rem 0;
+    &-step {
+        overflow: hidden;
+        &-tab {
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            &-dot {
+                background-color: var(--accent-color);
+                align-items: center;
+                border-radius: 50%;
+                color: $color-white;
+                contain: layout;
+                display: flex;
+                flex-wrap: wrap;
+                font-size: 14px;
+                justify-content: center;
+                height: 24px;
+                line-height: 1;
+                margin-right: 12px;
+                min-width: 24px;
+                position: relative;
+                text-shadow: 0 0 0 currentColor;
+                width: 24px;
+                &:before {
+                    bottom: 100%;
+                    margin-bottom: 8px;
+                }
+                &:after {
+                    background: rgba(0, 0, 0, 0.12);
+                    content: '';
+                    left: 50%;
+                    height: 99999px;
+                    margin-top: 8px;
+                    position: absolute;
+                    top: 100%;
+                    width: 1px;
+                }
+            }
+        }
+        &-content {
+            padding: 1rem 2rem 1rem calc(36px + 1rem);
+            > *:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &:first-child .stepper-step-tab-dot:before,
+        &:last-child .stepper-step-tab-dot:after {
+            display: none;
+        }
+    }
+}
